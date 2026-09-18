@@ -1,0 +1,389 @@
+/* =========================================
+   TURNING POINT CHURCH
+   Main External Stylesheet
+   ========================================= */
+
+/* ---------- CSS RESET ---------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 100%;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #333333;
+    background-color: #f5f7f8;
+}
+
+/* ---------- TYPOGRAPHY ---------- */
+
+h1,
+h2,
+h3 {
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 1.8rem;
+    color: #234b6f;
+    margin-bottom: 0.8rem;
+}
+
+h3 {
+    font-size: 1.3rem;
+}
+
+p {
+    margin-bottom: 1rem;
+    letter-spacing: 0.01em;
+}
+
+a {
+    color: #234b6f;
+    text-decoration: none;
+}
+
+/* ---------- HEADER ---------- */
+
+header {
+    background: linear-gradient(135deg, #234b6f, #36769f);
+    color: white;
+    text-align: center;
+    padding: 3rem 1.5rem;
+}
+
+header h1 {
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.03em;
+}
+
+header p {
+    font-size: 1.1rem;
+    margin-bottom: 0;
+}
+
+/* ---------- NAVIGATION ---------- */
+
+nav {
+    background-color: #17364f;
+    padding: 0.8rem 1rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+nav a {
+    display: block;
+    color: white;
+    padding: 0.7rem 1rem;
+    border-radius: 0.4rem;
+    font-weight: 600;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Pseudo-class requirements */
+
+nav a:hover {
+    background-color: #4f91bd;
+    color: white;
+}
+
+nav a:focus {
+    outline: 3px solid #f4c95d;
+    outline-offset: 2px;
+}
+
+nav a:active {
+    background-color: #10283a;
+}
+
+/* ---------- MAIN CONTENT ---------- */
+
+main {
+    width: 92%;
+    max-width: 1100px;
+    margin: 2rem auto;
+}
+
+/* Desktop layout using Grid */
+
+main {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+}
+
+main > section:first-child {
+    grid-column: 1 / -1;
+}
+
+/* ---------- CONTENT SECTIONS ---------- */
+
+section {
+    background-color: white;
+    padding: 1.8rem;
+    border: 1px solid #dce3e8;
+    border-radius: 0.7rem;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+section:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+}
+
+section h2 {
+    border-left: 5px solid #4f91bd;
+    padding-left: 0.7rem;
+}
+
+/* ---------- IMAGES ---------- */
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+section > img {
+    width: 100%;
+    max-height: 450px;
+    object-fit: cover;
+    border-radius: 0.6rem;
+    margin-bottom: 1.5rem;
+}
+
+/* ---------- LINKS / BUTTONS ---------- */
+
+main a {
+    display: inline-block;
+    background-color: #234b6f;
+    color: white;
+    padding: 0.7rem 1.2rem;
+    border-radius: 0.4rem;
+    font-weight: 600;
+    margin-top: 0.5rem;
+}
+
+main a:hover {
+    background-color: #36769f;
+}
+
+main a:focus {
+    outline: 3px solid #f4c95d;
+    outline-offset: 2px;
+}
+
+/* ---------- FORMS ---------- */
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+label {
+    font-weight: 600;
+    color: #234b6f;
+    margin-top: 0.5rem;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 0.8rem;
+    font: inherit;
+    color: #333333;
+    background-color: #ffffff;
+    border: 1px solid #b9c5cd;
+    border-radius: 0.4rem;
+}
+
+textarea {
+    min-height: 8rem;
+    resize: vertical;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 3px solid rgba(79, 145, 189, 0.25);
+    border-color: #36769f;
+}
+
+/* Submit buttons */
+
+input[type="submit"] {
+    width: auto;
+    align-self: flex-start;
+    background-color: #234b6f;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    cursor: pointer;
+    font-weight: 700;
+    transition: background-color 0.2s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #36769f;
+}
+
+input[type="submit"]:active {
+    background-color: #17364f;
+}
+
+/* ---------- GOOGLE MAP ---------- */
+
+iframe {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    min-height: 350px;
+    border: 0;
+    border-radius: 0.6rem;
+}
+
+/* ---------- FOOTER ---------- */
+
+footer {
+    margin-top: 3rem;
+    padding: 2rem 1rem;
+    background-color: #17364f;
+    color: white;
+    text-align: center;
+}
+
+footer p {
+    margin-bottom: 0.3rem;
+}
+
+/* ---------- TABLET ---------- */
+
+@media (max-width: 768px) {
+
+    header {
+        padding: 2.5rem 1rem;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    nav ul {
+        gap: 0.25rem;
+    }
+
+    nav a {
+        padding: 0.6rem 0.8rem;
+    }
+
+    main {
+        width: 94%;
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+    }
+
+    main > section:first-child {
+        grid-column: auto;
+    }
+
+    section {
+        padding: 1.4rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 480px) {
+
+    body {
+        font-size: 0.95rem;
+    }
+
+    header {
+        padding: 2rem 1rem;
+    }
+
+    header h1 {
+        font-size: 1.7rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    nav {
+        padding: 0.5rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    nav li {
+        width: 100%;
+    }
+
+    nav a {
+        width: 100%;
+        text-align: center;
+    }
+
+    main {
+        width: 94%;
+        margin: 1rem auto;
+    }
+
+    section {
+        padding: 1.1rem;
+        border-radius: 0.5rem;
+    }
+
+    h2 {
+        font-size: 1.35rem;
+    }
+
+    section > img {
+        max-height: 280px;
+    }
+
+    input[type="submit"] {
+        width: 100%;
+    }
+
+    iframe {
+        min-height: 280px;
+    }
+
+    footer {
+        margin-top: 2rem;
+        padding: 1.5rem 1rem;
+    }
+}
