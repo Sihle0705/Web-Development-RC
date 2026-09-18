@@ -66,7 +66,9 @@ Web- Development-RC/ <br>
 ├──css/ <br>
 │    └── style.css <br>
 ├──images/ <br>
-│    └── fhggg. <br>
+│    └── hero.jpg <br>
+│    └── old people.jpg <br>
+│    └── service.jpg <br>
 └──README.md <br>
 
 # Changelog
@@ -89,4 +91,8 @@ https://www.facebook.com/turningpointchurchdbn/ (Accessed: 14 August 2026). <br>
 Afrihost, 2026. Shared hosting: Linux and Windows. [online] Available at: 
 https://www.afrihost.com/shared-hosting [Accessed 12 August 2026]. <br> 
 Xneelo, 2026. Web hosting. [online] Available at: https://xneelo.co.za/web
-hosting/ [Accessed 12 August 2026]. <br> 
+hosting/ [Accessed 12 August 2026]. <br>
+Church Fuel, n.d. Warm Gradient Welcome Motion Background. [image/video online] Available at: sermoncentral.com [Accessed 18 September 2026]. <br> 
+Turning Point Church (2026) About. Available at: https://turningpointchurch.tv/about/ (Accessed: 18 September 2026). <br>
+Champions Church (2024) Top 12 benefits of live streaming online church services, Champions Church Blog, 5 January. Available at: https://championschurch.com/blog/top-12-benefits-of-live-streaming-online-church-services (Accessed: 18 September 2026). <br>
+Garden Lakes Baptist Church (n.d.) Blue-welcome-church-video-poster-template-df977a81710d4201a1a2a6546958ea54_screen. Available at: https://gardenlakesbaptist.com/blue-welcome-church-video-poster-template-df977a81710d4201a1a2a6546958ea54_screen/ (Accessed: 18 September 2026).
