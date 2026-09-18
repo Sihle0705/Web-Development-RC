@@ -70,6 +70,8 @@ Web- Development-RC/ <br>
 │    └── old people.jpg <br>
 │    └── service.jpg <br>
 └──README.md <br>
+# Response testing
+<img src="images/Screenshot%202026-09-18%20161810.png" alt="Screenshot Description" width="600">
 
 # Changelog
 - v0.1 – Written proposal drafted: Organisation Overview, Website Goals and Objectives, Proposed Features and Functionality, Technical Requirements, Timeline and Milestones, Budget
