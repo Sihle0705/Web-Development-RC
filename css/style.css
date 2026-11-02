@@ -387,3 +387,125 @@ footer p {
         padding: 1.5rem 1rem;
     }
 }
+
+
+/* =========================================
+   JAVASCRIPT FEATURES (search, forms, map)
+   ========================================= */
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+}
+
+/* ---------- SEARCH BAR ---------- */
+
+nav { position: relative; }
+
+.nav-search { position: relative; }
+
+.nav-search input[type="search"] {
+    width: 14rem;
+    padding: 0.6rem 0.9rem;
+    border-radius: 2rem;
+    border: 1px solid #4f91bd;
+}
+
+.search-results {
+    position: absolute;
+    right: 0;
+    top: 110%;
+    z-index: 50;
+    width: 22rem;
+    max-width: 90vw;
+    max-height: 60vh;
+    overflow-y: auto;
+    list-style: none;
+    background: #ffffff;
+    border: 1px solid #dce3e8;
+    border-radius: 0.5rem;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+.search-results[hidden] { display: none; }
+
+.search-results li { width: 100%; }
+
+.search-results a {
+    display: block;
+    color: #333333;
+    font-weight: 400;
+    padding: 0.7rem 0.9rem;
+    border-radius: 0;
+    border-bottom: 1px solid #eef1f3;
+}
+
+.search-results a:hover,
+.search-results a:focus {
+    background-color: #eaf3f9;
+    color: #17364f;
+}
+
+.search-results strong { display: block; color: #234b6f; }
+.result-page { font-size: 0.8rem; color: #36769f; }
+.result-text { display: block; font-size: 0.85rem; color: #555555; }
+.no-results { padding: 0.8rem 0.9rem; color: #555555; }
+
+/* ---------- FORM FEEDBACK ---------- */
+
+.error-message {
+    display: block;
+    margin-top: 4px;
+    color: #c0392b;
+    font-size: 0.85rem;
+}
+
+input.error,
+select.error,
+textarea.error {
+    border-color: #c0392b;
+    background-color: #fdf3f2;
+}
+
+.form-status {
+    margin-top: 1rem;
+    padding: 0.9rem 1rem;
+    border-radius: 0.5rem;
+}
+
+.form-status:empty { display: none; }
+.form-status.success { background: #eef8f0; border: 1px solid #2e8b57; color: #1d5c39; }
+.form-status.warning { background: #fff6e5; border: 1px solid #e69500; color: #7a4d00; }
+.form-status.info    { background: #eaf3f9; border: 1px solid #4f91bd; color: #17364f; }
+.form-status a { display: inline; background: none; color: inherit; padding: 0; text-decoration: underline; }
+
+/* ---------- MAP ---------- */
+
+#map {
+    width: 100%;
+    height: 350px;
+    border-radius: 0.6rem;
+    overflow: hidden;
+}
+
+#map iframe {
+    min-height: 0;
+    height: 100%;
+}
+
+@media (max-width: 480px) {
+    #map { height: 280px; }
+
+    .nav-search input[type="search"] { width: 100%; }
+
+    .search-results {
+        position: static;
+        width: 100%;
+        max-width: 100%;
+        margin-top: 0.4rem;
+    }
+}

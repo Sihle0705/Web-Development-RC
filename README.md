@@ -44,6 +44,106 @@ Timeline and Milestones
 Budget
 References
 
+# Part 2 Css Styling and Responsive Design
+The second part involves transforming the basic HTML design from Part 1 into a properly designed website through the use of one external CSS file (css/style.css).
+
+Design
+
+- Color scheme: use of deep blue colors (#17364f,#234b6f,#36769f,#4f91bd) to create a calm, trustworthy mood, a light gray color for the background (#f5f7f8) against which white content cards will be well visible, and a - golden border (#f4c95d) for the keyboard focus.
+- Font: Arial/Helvetica sans-serif for ease of readability on all devices, along with a defined font sizing hierarchy (h1: 2.5rem; h2: 1.8rem; h3: 1.3rem) and line height for the text content of 1.6.
+- Header: a diagonal blue gradient (linear-gradient(135deg, #234b6f, #36769f)), white text in the centre.
+- Content cards: all cards are white and have borders, rounded corners, and shadows which become darker when hovered.
+
+CSS Techniques Used
+
+| Technique | Where it is used |
+| :--- | :--- |
+| CSS reset | `*` rule sets margin and padding to 0 and `box-sizing: border-box` so sizes are predictable |
+| External stylesheet | `css/style.css` linked in the `<head>` of every page |
+| Element, class, ID and descendant selectors | e.g. `nav ul`, `section h2`, `main > section:first-child` |
+| Flexbox | Navigation menu (`nav ul`) and forms (`form`) |
+| CSS Grid | `main` is a two-column grid on desktop, and the first section spans both columns |
+| Pseudo-classes | `:hover`, `:focus` and `:active` on navigation links, buttons, form fields and submit buttons |
+| Transitions | Smooth 0.2s colour change on nav links and submit buttons |
+| Box model | Padding, borders, `border-radius` and margins on cards, inputs and buttons |
+| Responsive images | `max-width: 100%`, `height: auto` and `object-fit: cover` so images never overflow |
+| Media queries | Breakpoints at 768px (tablet) and 480px (mobile) |
+| Smooth scrolling | `scroll-behavior: smooth` on `html` |
+
+
+Responsive Design
+The site was designed to work on desktop, tablet and mobile (one of the project objectives).
+
+-Desktop (above 768px): two-column grid of cards, horizontal centred navigation.
+-Tablet (768px and below): the grid becomes a single column, headings and padding are reduced, and the navigation items are tighter.
+-Mobile (480px and below): the navigation stacks vertically with full-width buttons, text and images are scaled down, submit buttons become full width, and the map is shortened.
+
+Part 2 Testing
+
+| Test | Expected result | Result |
+| :--- | :--- | :--- |
+| Open each page on desktop | Same header, navigation and footer styling on all five pages | |
+| Hover over a nav link | Background changes to lighter blue | |
+| Tab through links and form fields | Visible focus outline on each | |
+| Resize the browser below 768px | Cards stack into one column | |
+| Resize below 480px | Navigation stacks vertically, buttons full width | |
+| Open on a real phone | No sideways scrolling, text readable, images fit | |
+
+
+Part 3 Details – Adding JavaScript
+Part 3 adds JavaScript so the site responds to visitors: working forms with validation, a search bar and an interactive map. The scripts live in the js/ folder and are loaded at the bottom of each page with defer.
+
+JavaScript Files
+
+| File | Purpose |
+| :--- | :--- |
+| **js/main.js** | Shared helper functions (email and South African phone validation, clearing error messages, escaping text for safe display) and starts all other features once the page loads. |
+| **js/forms.js** | Validation and sending for the Contact form and the Volunteer / Sponsor Enquiry form. |
+| **js/maps.js** | Builds the interactive map and Get Directions button on the Contact page. |
+| **js/search.js** | Adds a search bar to the navigation on every page. |
+
+
+Features
+1. Contact and Enquiry forms
+- Checks the full name, a valid email address, a message of at least 10 characters, and (on the enquiry form) an optional South African phone number such as 0821234567 or +27821234567.
+- Shows a clear error message directly under any field that is wrong, moves the cursor to the first mistake, and removes each message as soon as the visitor starts correcting that field.
+- Sends valid forms to the church's email through the FormSubmit service. If sending fails, it opens the visitor's email app with the message filled in instead.
+- Shows a success message after sending. On the enquiry form the message changes depending on whether the visitor chose Volunteering, Becoming a Sponsor or Other.
+- The forms use the same flexible layout as the rest of the site, so they stay usable on phones, and the feedback messages are styled in style.css.
+
+2. Search bar
+- A search box is added to the navigation bar on every page.
+- Results appear as the visitor types, showing the section heading, the page it is on and a short piece of text. Pressing Enter opens the best match, and Escape closes the list.
+- If nothing matches, a "No results" message is shown.
+- The search works from an index of the site's content stored in search.js, so it must be updated if page text changes.
+
+3. Interactive map
+- The Contact page previously used a short Google Maps link inside an iframe, which Google does not allow to load.
+- maps.js now builds a proper Google Maps embed from the church's address using JavaScript, so visitors can zoom and drag the map. No external library or API key is needed.
+- The Get Directions button opens the same location in Google Maps
+
+Part 3 Testing
+
+| Test | Expected result | Result |
+| :--- | :--- | :--- |
+| Submit the empty contact form | Error messages under name, email and message | |
+| Enter an invalid email (e.g. abc) | Email error message appears | |
+| Start typing in a field with an error | That error disappears | |
+| Submit a correct contact form | Success message shown | |
+| Enquiry form with phone 12345 | Phone error message appears | |
+| Enquiry form, choose Volunteering, submit correctly | Volunteer-specific thank-you message | |
+| Type "youth" in the search bar | Youth Service result appears | |
+| Type "zzzz" in the search bar | "No results" message | |
+| Press Enter in the search bar | Opens the best matching page | |
+| Open the Contact page | Map shows the church area, can be zoomed and dragged | |
+| Tap Get Directions | Opens Google Maps at the church | |
+| Test everything on a phone | Forms, search and map all usable | |
+
+Known Limitations
+- The indexing procedure is done manually; therefore, it requires revision anytime the page content is modified.
+- The application FormSubmit requires that the receiving email address should activate only once (the activation email will be sent on the first submission).
+- The map placement will be dependent on how Google locates the church based on the address provided; hence, the exact street address must be used.
+
 # Site Map
 Turning Point Church Website <br> 
 │ <br> 
@@ -54,28 +154,41 @@ Turning Point Church Website <br>
 │     └── Volunteer / Sponsor enquiry form <br> 
 └── Contact (contact.html) <br> 
       └── Contact form, address, map <br> 
-# Structure 
-Web- Development-RC/ <br> 
-│ <br> 
-├── index.html <br> 
-├── about.html <br> 
-├── services.html <br> 
-├── enquiry.html <br>
-├── contact.html <br> 
-│     <br>
-├──css/ <br>
-│    └── style.css <br>
-├──images/ <br>
-│    └── hero.jpg <br>
-│    └── old people.jpg <br>
-│    └── service.jpg <br>
-└──README.md <br>
+
+
+Structure
+```
+Web-Development-RC/
+│
+├── index.html
+├── about.html
+├── services.html
+├── enquiry.html
+├── contact.html
+│
+├── css/
+│   └── style.css
+├── js/
+│   ├── main.js
+│   ├── forms.js
+│   ├── maps.js
+│   └── search.js
+├── images/
+└── README.md
+```
+# Response testing
+<img src="images/Screenshot%202026-09-18%20161810.png" alt="Screenshot Description" width="600">
 
 # Changelog
 - v0.1 – Written proposal drafted: Organisation Overview, Website Goals and Objectives, Proposed Features and Functionality, Technical Requirements, Timeline and Milestones, Budget
 - v0.2 – Sitemap and file/folder structure created
 - v0.3 – Basic HTML structure built for all five pages (index, about, services, enquiry, contact) with semantic tags and researched content integrated
 - v0.4 – README file created to document project progress
+- v0.5 – External stylesheet completed: colour palette, typography, header gradient, card layout, Flexbox navigation and forms, Grid layout, hover/focus/active states
+- v0.6 – Responsive design added with media queries at 768px and 480px; responsive images and mobile navigation; response testing done
+- v0.7 – JavaScript added: shared helper functions, Contact and Enquiry form validation with error and success messages
+- v0.8 – JavaScript added: site search bar in the navigation and interactive Google Map with Get Directions button on the Contact page
+- v0.9 – Navigation links and file names fixed (home page is index.html), search and form styles added to the stylesheet
 
 # Referances
 New Covenant Fellowship Durban (n.d.) A History of Turning Point Church. Available at: 
@@ -96,3 +209,6 @@ Church Fuel, n.d. Warm Gradient Welcome Motion Background. [image/video online] 
 Turning Point Church (2026) About. Available at: https://turningpointchurch.tv/about/ (Accessed: 18 September 2026). <br>
 Champions Church (2024) Top 12 benefits of live streaming online church services, Champions Church Blog, 5 January. Available at: https://championschurch.com/blog/top-12-benefits-of-live-streaming-online-church-services (Accessed: 18 September 2026). <br>
 Garden Lakes Baptist Church (n.d.) Blue-welcome-church-video-poster-template-df977a81710d4201a1a2a6546958ea54_screen. Available at: https://gardenlakesbaptist.com/blue-welcome-church-video-poster-template-df977a81710d4201a1a2a6546958ea54_screen/ (Accessed: 18 September 2026).
+Google (n.d.) Google Maps. Available at: https://www.google.com/maps
+FormSubmit (n.d.) FormSubmit. Available at: https://formsubmit.co/
+Mozilla (n.d.) MDN Web Docs. Available at: https://developer.mozilla.org/

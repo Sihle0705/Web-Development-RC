@@ -37,17 +37,19 @@
 
         <section>
             <h2>Find Us</h2>
-            <iframe src="https://maps.app.goo.gl/byLVNqYAbXjwKhd9A" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <div id="map" role="region" aria-label="Map showing the location of Turning Point Church"></div>
+            <a id="directions-link" href="https://www.google.com/maps/search/?api=1&query=Turning+Point+Church+Woodlands+Durban" target="_blank" rel="noopener">Get Directions</a>
+            <noscript><p>Turn on JavaScript to see the map, or use the Get Directions button.</p></noscript>
         </section>
 
         <section>
             <h2>Contact Form</h2>
-            <form>
+            <form id="contact-form" novalidate>
                 <label for="name">Full Name:</label><br>
-                <input type="text" id="name" name="name"><br><br>
+                <input type="text" id="name" name="name" autocomplete="name"><br><br>
 
                 <label for="email">Email Address:</label><br>
-                <input type="email" id="email" name="email"><br><br>
+                <input type="email" id="email" name="email" autocomplete="email"><br><br>
 
                 <label for="message">Message:</label><br>
                 <textarea id="message" name="message" rows="5" cols="30"></textarea><br><br>
@@ -62,5 +64,9 @@
         <p>Woodlands, Durban, KwaZulu-Natal</p>
     </footer>
 
+    <script src="js/forms.js" defer></script>
+    <script src="js/maps.js" defer></script>
+    <script src="js/search.js" defer></script>
+    <script src="js/main.js" defer></script>
 </body>
 </html>
