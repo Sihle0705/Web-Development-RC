@@ -44,6 +44,37 @@ Timeline and Milestones
 Budget
 References
 
+# Part 2 Css Styling and Responsive Design
+The second part involves transforming the basic HTML design from Part 1 into a properly designed website through the use of one external CSS file (css/style.css).
+
+Design
+
+- Color scheme: use of deep blue colors (#17364f,#234b6f,#36769f,#4f91bd) to create a calm, trustworthy mood, a light gray color for the background (#f5f7f8) against which white content cards will be well visible, and a - golden border (#f4c95d) for the keyboard focus.
+- Font: Arial/Helvetica sans-serif for ease of readability on all devices, along with a defined font sizing hierarchy (h1: 2.5rem; h2: 1.8rem; h3: 1.3rem) and line height for the text content of 1.6.
+- Header: a diagonal blue gradient (linear-gradient(135deg, #234b6f, #36769f)), white text in the centre.
+- Content cards: all cards are white and have borders, rounded corners, and shadows which become darker when hovered.
+
+CSS Techniques Used
+Technique	Where it is used
+CSS reset	* rule sets margin and padding to 0 and box-sizing: border-box so sizes are predictable
+External stylesheet	css/style.css linked in the <head> of every page
+Element, class, ID and descendant selectors	e.g. nav ul, section h2, main > section:first-child
+Flexbox	Navigation menu (nav ul) and forms (form)
+CSS Grid	main is a two-column grid on desktop, and the first section spans both columns
+Pseudo-classes	:hover, :focus and :active on navigation links, buttons, form fields and submit buttons
+Transitions	Smooth 0.2s colour change on nav links and submit buttons
+Box model	Padding, borders, border-radius and margins on cards, inputs and buttons
+Responsive images	max-width: 100%, height: auto and object-fit: cover so images never overflow
+Media queries	Breakpoints at 768px (tablet) and 480px (mobile)
+Smooth scrolling	scroll-behavior: smooth on html
+
+Responsive Design
+The site was designed to work on desktop, tablet and mobile (one of the project objectives).
+
+-Desktop (above 768px): two-column grid of cards, horizontal centred navigation.
+-Tablet (768px and below): the grid becomes a single column, headings and padding are reduced, and the navigation items are tighter.
+-Mobile (480px and below): the navigation stacks vertically with full-width buttons, text and images are scaled down, submit buttons become full width, and the map is shortened.
+
 # Site Map
 Turning Point Church Website <br> 
 │ <br> 
@@ -78,6 +109,11 @@ Web- Development-RC/ <br>
 - v0.2 – Sitemap and file/folder structure created
 - v0.3 – Basic HTML structure built for all five pages (index, about, services, enquiry, contact) with semantic tags and researched content integrated
 - v0.4 – README file created to document project progress
+- v0.5 – External stylesheet completed: colour palette, typography, header gradient, card layout, Flexbox navigation and forms, Grid layout, hover/focus/active states
+- v0.6 – Responsive design added with media queries at 768px and 480px; responsive images and mobile navigation; response testing done
+- v0.7 – JavaScript added: shared helper functions, Contact and Enquiry form validation with error and success messages
+- v0.8 – JavaScript added: site search bar in the navigation and interactive Google Map with Get Directions button on the Contact page
+- v0.9 – Navigation links and file names fixed (home page is index.html), search and form styles added to the stylesheet
 
 # Referances
 New Covenant Fellowship Durban (n.d.) A History of Turning Point Church. Available at: 
