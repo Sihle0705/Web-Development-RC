@@ -75,6 +75,30 @@ The site was designed to work on desktop, tablet and mobile (one of the project 
 -Tablet (768px and below): the grid becomes a single column, headings and padding are reduced, and the navigation items are tighter.
 -Mobile (480px and below): the navigation stacks vertically with full-width buttons, text and images are scaled down, submit buttons become full width, and the map is shortened.
 
+Part 2 Testing
+
+| Test | Expected result | Result |
+| :--- | :--- | :--- |
+| Open each page on desktop | Same header, navigation and footer styling on all five pages | |
+| Hover over a nav link | Background changes to lighter blue | |
+| Tab through links and form fields | Visible focus outline on each | |
+| Resize the browser below 768px | Cards stack into one column | |
+| Resize below 480px | Navigation stacks vertically, buttons full width | |
+| Open on a real phone | No sideways scrolling, text readable, images fit | |
+
+
+Part 3 Details – Adding JavaScript
+Part 3 adds JavaScript so the site responds to visitors: working forms with validation, a search bar and an interactive map. The scripts live in the js/ folder and are loaded at the bottom of each page with defer.
+
+JavaScript Files
+
+| File | Purpose |
+| :--- | :--- |
+| **js/main.js** | Shared helper functions (email and South African phone validation, clearing error messages, escaping text for safe display) and starts all other features once the page loads. |
+| **js/forms.js** | Validation and sending for the Contact form and the Volunteer / Sponsor Enquiry form. |
+| **js/maps.js** | Builds the interactive map and Get Directions button on the Contact page. |
+| **js/search.js** | Adds a search bar to the navigation on every page. |
+
 # Site Map
 Turning Point Church Website <br> 
 │ <br> 
